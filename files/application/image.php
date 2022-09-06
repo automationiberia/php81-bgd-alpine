@@ -22,7 +22,7 @@ if ( $deployment == 'blue') {
 } elseif ($deployment == 'orange')  {
   $color = $orange;
 } else {
-  $color = $red;
+  $color = $orange;
 }
 
 // Draw a filled rectangle
