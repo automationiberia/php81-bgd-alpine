@@ -8,7 +8,7 @@ $green = imagecolorallocate($im, 0, 255, 0);
 $blue  = imagecolorallocate($im, 0, 0, 250);
 $yellow = imagecolorallocate($im, 255, 255, 0);
 $orange = imagecolorallocate($im, 220, 110, 0);
-// Line reserved to trigger the webhook in the lab. 
+// Line reserved to trigger the webhook in the lab.
 $deployment = getenv("COLOR");
 
 if ( $deployment == 'blue') {
@@ -22,7 +22,7 @@ if ( $deployment == 'blue') {
 } elseif ($deployment == 'orange')  {
   $color = $orange;
 } else {
-  $color = $red;
+  $color = $orange;
 }
 
 // Draw a filled rectangle
