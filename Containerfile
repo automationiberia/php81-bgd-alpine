@@ -40,7 +40,7 @@ RUN apk --no-cache --repository https://dl-cdn.alpinelinux.org/alpine/edge/main 
     php81-fpm \
     php81-sodium \
     # Iconv Fix
-    && ln -s /usr/bin/php81 /usr/bin/php  && mkdir /htdocs && rm /var/www/localhost/htdocs/index.html
+    && mkdir /htdocs && rm /var/www/localhost/htdocs/index.html
 
 ADD files/application /var/www/localhost/htdocs
 ADD files/php-config/htaccess /var/www/html/.htaccess
@@ -49,7 +49,7 @@ ADD files/php-config/gd.ini /etc/php81/conf.d
 RUN sed -i 's/Listen 80/Listen 8080/' /etc/apache2/httpd.conf \
   && mkdir /run/php-fpm8 \
   && chgrp -R 0 /var/log/apache2 /var/run/apache2 /var/log/php81 /run/php-fpm8 \
-  && chmod -R g=u /var/log/apache2 /var/run/apache2 /var/log/php81 /run/php-fpm8 
+  && chmod -R g=u /var/log/apache2 /var/run/apache2 /var/log/php81 /run/php-fpm8
 
 EXPOSE 8080
 USER 1001

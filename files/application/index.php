@@ -90,6 +90,18 @@
             <img src="image.php">
           </p>
         </div>
+        <div class="col-md-6 col-md-offset-3">
+          <h2>Application Text </h2>
+          <p>
+            <?php
+            // If strict types are enabled i.e. declare(strict_types=1);
+            $file = file_get_contents('./read_from_file.txt', true);
+            // Otherwise
+            $file = file_get_contents('./read_from_file.txt', FILE_USE_INCLUDE_PATH);
+            echo $file;
+            ?>
+          </p>
+        </div>
       </div>
         </div><!-- /col -->
       </div><!-- /row -->
